@@ -1,288 +1,588 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAINFRAME // Developer Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #05060b;
+        :root {
+            --bg-color: #05070bc2;
+            --grid-color: rgba(0, 242, 254, 0.03);
+            --primary: #00f2fe;
+            --secondary: #9b51e0;
+            --text-main: #e2e8f0;
+            --text-muted: #64748b;
+            --card-bg: rgba(10, 15, 26, 0.8);
+            --border: rgba(0, 242, 254, 0.15);
+            --glow: rgba(0, 242, 254, 0.4);
         }
-        .tech-font {
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             font-family: 'Fira Code', monospace;
+            scroll-behavior: smooth;
         }
-        /* Advanced Neon Scanline Background Grid */
-        .grid-bg {
-            background-image: 
-                linear-gradient(to right, rgba(0, 245, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(157, 78, 221, 0.04) 1px, transparent 1px);
-            background-size: 3rem 3rem;
+
+        body {
+            background-color: #030508;
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
         }
-        /* Custom subtle pulsing terminal light */
-        @keyframes cyber-pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
+
+        /* Scanline Animation & Grid Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
         }
-        .glow-effect {
-            animation: cyber-pulse 4s infinite ease-in-out;
+
+        .matrix-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -1px;
+            transition: text-shadow 0.3s ease;
+        }
+        .logo:hover {
+            text-shadow: 0 0 8px var(--glow);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 5px var(--glow);
+        }
+
+        /* Hero Wrapper Matrix */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 4rem;
+            min-height: calc(100vh - 120px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 8rem;
+        }
+
+        /* Terminal Window Upgrades */
+        .terminal {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 950px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 15px rgba(0, 242, 254, 0.05);
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .terminal-header {
+            grid-column: span 2;
+            background: rgba(5, 7, 11, 0.9);
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .btn-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-r { background: #ff5f56; }
+        .dot-y { background: #ffbd2e; }
+        .dot-g { background: #27c93f; }
+
+        .terminal-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .terminal-body {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .line {
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+        .meta { color: var(--text-muted); }
+        .cmd { color: #27c93f; }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin: 1rem 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .highlight-blue { color: var(--primary); text-shadow: 0 0 10px rgba(0,242,254,0.2); }
+        .highlight-purple { color: var(--secondary); }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .subtitle span {
+            color: var(--text-main);
+            border-bottom: 1px dashed var(--border);
+        }
+
+        /* Interactive Buttons */
+        .cta-box {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-action::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.15), transparent);
+            transition: all 0.4s ease;
+        }
+        .btn-action:hover::before {
+            left: 100%;
+        }
+        .btn-action:hover {
+            background: rgba(0, 242, 254, 0.08);
+            box-shadow: 0 0 15px var(--glow);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+        .btn-secondary:hover {
+            background: rgba(155, 81, 224, 0.08);
+            box-shadow: 0 0 15px rgba(155, 81, 224, 0.4);
+        }
+
+        /* Image Frame and Corner Brackets */
+        .terminal-visual {
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 1px solid var(--border);
+            position: relative;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(110%);
+            mix-blend-mode: luminosity;
+            transition: all 0.5s ease;
+        }
+        .img-wrapper:hover .profile-img {
+            filter: grayscale(0%) contrast(100%);
+            mix-blend-mode: normal;
+        }
+
+        /* Cyberpunk Tech Brackets */
+        .bracket {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        .tl { top: -8px; left: -8px; border-right: none; border-bottom: none; }
+        .tr { top: -8px; right: -8px; border-left: none; border-bottom: none; }
+        .bl { bottom: -8px; left: -8px; border-right: none; border-top: none; }
+        .br { bottom: -8px; right: -8px; border-left: none; border-top: none; }
+        
+        .img-wrapper:hover .bracket {
+            width: 24px;
+            height: 24px;
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .img-caption {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            font-size: 0.65rem;
+            color: var(--primary);
+            background: rgba(5, 7, 11, 0.85);
+            padding: 2px 6px;
+            border: 1px solid var(--border);
+        }
+
+        /* Sections Grid Styles */
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        .content-section {
+            margin-bottom: 8rem;
+            scroll-margin-top: 100px;
+        }
+
+        /* Portfolio Grid System */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Modern Project Cards with Hover Loading Screen Overlay */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: rgba(0, 242, 254, 0.05);
+            color: var(--primary);
+            padding: 3px 8px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 242, 254, 0.1);
+        }
+
+        /* Certificate Dynamic Component Area */
+        .cert-card {
+            display: flex;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 25px rgba(155, 81, 224, 0.05);
+            transform: scale(1.01);
+        }
+
+        .cert-badge-frame {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .cert-badge-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cert-details h4 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-details p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .cert-link {
+            margin-left: auto;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover .cert-link {
+            border-color: var(--secondary);
+            text-shadow: 0 0 5px rgba(155, 81, 224, 0.4);
+        }
+
+        /* Fluid Responsive Query adjustments */
+        @media(max-width: 900px) {
+            header { padding: 2rem; }
+            main { padding: 2rem; }
+            .terminal { grid-template-columns: 1fr; }
+            .terminal-visual { border-left: none; border-top: 1px solid var(--border); padding: 3rem; }
+            .cert-card { flex-direction: column; text-align: center; }
+            .cert-link { margin-left: 0; margin-top: 1rem; }
         }
     </style>
 </head>
-<body class="text-gray-200 min-h-screen relative overflow-x-hidden selection:bg-[#00f5ff] selection:text-black antialiased">
+<body>
 
-    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#00f5ff]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect"></div>
-    <div class="absolute top-[40%] right-[-10%] w-[45vw] h-[45vw] bg-[#9d4edd]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect" style="animation-delay: 2s;"></div>
+    <div class="matrix-grid"></div>
 
-    <div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
+    <header>
+        <a href="#" class="logo">&lt; SYS.OP /&gt;</a>
+        <nav>
+            <a href="#about">// about</a>
+            <a href="#projects">// repos</a>
+            <a href="#certificates">// certs</a>
+        </nav>
+    </header>
 
-    <nav class="fixed top-0 left-0 w-full bg-[#05060b]/70 backdrop-blur-xl border-b border-gray-900/80 z-50 px-6 py-4 transition-all duration-300">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="tech-font font-bold text-[#00f5ff] tracking-widest text-sm sm:text-base group flex items-center gap-2">
-                <span class="text-gray-600 group-hover:text-[#00f5ff] transition-colors">&lt;</span>
-                <span>SYS.OP</span>
-                <span class="text-gray-600 group-hover:text-[#00f5ff] transition-colors">/&gt;</span>
-            </a>
-            <div class="flex space-x-6 sm:space-x-8 tech-font text-xs sm:text-sm">
-                <a href="#about" class="text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
-                <a href="#background" class="text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
-                <a href="#projects" class="text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
-                <a href="#certificates" class="text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 pt-28 pb-16">
-
-        <section class="py-8 sm:py-16 flex flex-col justify-center min-h-[80vh]">
-            <div class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
-                
-                <div class="flex items-center justify-between border-b border-gray-900 pb-4 mb-6">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-rose-500/70 transition-colors group-hover:bg-rose-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-amber-500/70 transition-colors group-hover:bg-amber-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-emerald-500/70 transition-colors group-hover:bg-emerald-500"></div>
-                        <span class="text-xs text-gray-500 pl-4 tech-font tracking-tight">guest@mainframe:~</span>
+    <main id="about">
+        <!-- Hero Module Window Area -->
+        <div class="hero-container">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                        <div class="btn-dot dot-r"></div>
+                        <div class="btn-dot dot-y"></div>
+                        <div class="btn-dot dot-g"></div>
                     </div>
-                    <div class="text-[10px] text-gray-600 tech-font">tty/1 (static)</div>
+                    <div class="terminal-title">guest@mainframe:~</div>
+                    <div class="terminal-title">tty/1 (static)</div>
                 </div>
                 
-                <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="terminal-body">
+                    <div class="line"><span class="meta">// Initializing client authorization modules ...</span></div>
+                    <div class="line"><span class="meta">&rarr; ~</span> <span class="cmd">cat</span> intro.md</div>
                     
-                    <div class="md:col-span-7 space-y-4 tech-font text-xs sm:text-sm md:text-base">
-                        <p class="text-gray-600 font-medium">// Initializing client authorization modules...</p>
-                        <p><span class="text-[#39ff14]">➜</span> <span class="text-[#00f5ff]">~</span> cat intro.md</p>
+                    <h1>HI, I'M <span class="highlight-blue">JOHN EMMANUEL MORRE</span></h1>
+                    
+                    <div class="subtitle">Full-Stack Developer & <span>Systems Architecture Specialist</span>.</div>
+                    
+                    <div class="line"><span class="meta">&rarr; ~</span> <span class="cmd">execute</span> --connect</div>
+                    
+                    <div class="cta-box">
+                        <a href="#projects" class="btn-action">VIEW_PROJECTS</a>
+                        <a href="#certificates" class="btn-action btn-secondary">READ_BIO</a>
+                    </div>
+                </div>
+
+                <div class="terminal-visual">
+                    <div class="img-wrapper">
+                        <div class="bracket tl"></div>
+                        <div class="bracket tr"></div>
+                        <div class="bracket bl"></div>
+                        <div class="bracket br"></div>
                         
-                        <div class="py-2">
-                            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans uppercase">
-                                HI, I'M <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-purple-400 to-[#9d4edd] drop-shadow-sm">John Emmanuel Morre</span>
-                            </h1>
-                            <p class="text-base sm:text-lg text-gray-400 font-sans font-light mt-2 tracking-wide">
-                                Full-Stack Developer & <span class="text-white border-b border-[#00f5ff]/40 pb-0.5">Systems Architecture Specialist</span>.
-                            </p>
-                        </div>
-                        
-                        <div class="pt-4">
-                            <p><span class="text-[#39ff14]">➜</span> <span class="text-[#00f5ff]">~</span> execute --connect</p>
-                            <div class="mt-5 flex flex-wrap gap-4 font-sans">
-                                <a href="#projects" class="px-5 py-2.5 border border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black font-semibold text-xs uppercase tracking-widest rounded transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,245,255,0.4)]">
-                                    View_Projects
-                                </a>
-                                <a href="#about" class="px-5 py-2.5 bg-[#9d4edd]/10 text-[#9d4edd] border border-[#9d4edd]/40 hover:border-[#9d4edd] hover:bg-[#9d4edd]/30 font-semibold text-xs uppercase tracking-widest rounded transition-all duration-300">
-                                    Read_Bio
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 flex justify-center">
-                        <div class="relative group/img w-full max-w-[260px] aspect-square">
-                            <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-[#00f5ff]"></div>
-                            <div class="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-[#00f5ff]"></div>
-                            <div class="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-[#00f5ff]"></div>
-                            <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-[#00f5ff]"></div>
-                            
-                            <div class="w-full h-full rounded-lg overflow-hidden border border-gray-800 bg-gray-950/40 relative">
-                                <img src="profile.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'" alt="John Emmanuel Morre" class="w-full h-full object-cover filter grayscale opacity-75 group-hover/img:grayscale-0 group-hover/img:opacity-100 transition-all duration-500 scale-105 group-hover/img:scale-100">
-                                
-                                <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-[#05060b]/20 to-[#05060b]/40"></div>
-                            </div>
-                            <div class="absolute bottom-2 left-2 tech-font text-[10px] bg-black/80 text-gray-400 px-2 py-0.5 rounded border border-gray-800 group-hover/img:text-[#00f5ff] transition-colors">
-                                OBJ_PREVIEW // LIVE
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-20 border-b border-gray-950">
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div class="md:col-span-2 space-y-6">
-                    <div class="flex items-center gap-3">
-                        <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;ABOUT_ME /&gt;</h2>
-                        <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
-                    </div>
-                    <div class="text-gray-400 font-light leading-relaxed text-sm sm:text-base space-y-4">
-                        <p>
-                            Based out of Tibungco, I am a 22-year-old system designer and final-year BSIT undergraduate at <span class="text-white font-medium">Davao del Norte State College</span>. My primary technical focus lies in web-based engineering—specializing in transforming complex logic and conceptual schemas into high-performance, operational architectures.
-                        </p>
-                        <p>
-                            I thrive on the challenge of full-stack configuration: from constructing structural endpoints and designing automated logic routines, to formatting smooth front-end interfaces. When my development workspace is down, I switch gears to immersive computer gaming and technical reading, channels which keep my analytical thinking active and sharp.
-                        </p>
+                        <!-- Reference to configuration layout style from image_a426e5.png -->
+                        <img src="profile.jpg" alt="John Emmanuel Morre" class="profile-img">
+                        <div class="img-caption">OBJ_PREVIEW // LIVE</div>
                     </div>
                 </div>
-                
-                <div class="border border-gray-900 bg-[#0b0c14]/50 backdrop-blur-sm p-6 rounded-xl hover:border-gray-800 transition-all duration-300 shadow-lg">
-                    <h3 class="text-xs font-bold text-[#9d4edd] uppercase tracking-widest mb-5 tech-font flex items-center gap-2">
-                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#9d4edd] animate-pulse"></span> // Core_Interests
-                    </h3>
-                    <ul class="space-y-3 text-xs sm:text-sm text-gray-400 tech-font">
-                        <li class="flex items-center gap-3 group hover:text-white transition-colors">
-                            <span class="text-[#9d4edd] group-hover:scale-125 transition-transform">■</span> Web Systems Architecture
-                        </li>
-                        <li class="flex items-center gap-3 group hover:text-white transition-colors">
-                            <span class="text-[#9d4edd] group-hover:scale-125 transition-transform">■</span> Dynamic Database Logic
-                        </li>
-                        <li class="flex items-center gap-3 group hover:text-white transition-colors">
-                            <span class="text-[#9d4edd] group-hover:scale-125 transition-transform">■</span> Competitive Gaming Analytics
-                        </li>
-                        <li class="flex items-center gap-3 group hover:text-white transition-colors">
-                            <span class="text-[#9d4edd] group-hover:scale-125 transition-transform">■</span> UI/UX Interactive Styling
-                        </li>
-                        <li class="flex items-center gap-3 group hover:text-white transition-colors">
-                            <span class="text-[#9d4edd] group-hover:scale-125 transition-transform">■</span> JSON Parsing & Automations
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="background" class="py-20 border-b border-gray-950">
-            <div class="flex items-center gap-3 mb-12">
-                <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
-                <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
-            </div>
-            
-            <div class="space-y-10 relative before:absolute before:inset-0 before:left-4 before:w-[1px] before:bg-gray-900">
-                
-                <div class="relative pl-12 group transition-all duration-300">
-                    <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#00f5ff] group-hover:border-[#00f5ff] transition-all duration-300 shadow-[0_0_0_0px_rgba(0,245,255,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(0,245,255,0.2)]"></div>
-                    <span class="text-xs text-[#00f5ff] tech-font font-bold uppercase tracking-wider bg-[#00f5ff]/5 px-2 py-0.5 rounded border border-[#00f5ff]/10">2024 - Present</span>
-                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#00f5ff]">Lead Systems Architect</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Tech Solutions Corp // Building scalable digital frameworks.</p>
-                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Engineered full-stack responsive pipelines, optimizing custom relational data models while improving overall application structural runtimes.</p>
-                </div>
-
-                <div class="relative pl-12 group transition-all duration-300">
-                    <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#9d4edd] group-hover:border-[#9d4edd] transition-all duration-300 shadow-[0_0_0_0px_rgba(157,78,221,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(157,78,221,0.2)]"></div>
-                    <span class="text-xs text-[#9d4edd] tech-font font-bold uppercase tracking-wider bg-[#9d4edd]/5 px-2 py-0.5 rounded border border-[#9d4edd]/10">2022 - 2024</span>
-                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#9d4edd]">Junior Frontend Designer</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Digital Labs Inc // Pixel-perfect interactive interfaces.</p>
-                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Collaborated on custom modern themes, writing structural script layers and handling complex layout updates for interactive platform products.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-20 border-b border-gray-950">
-            <div class="flex items-center gap-3 mb-12">
-                <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;PROJECT_REPOS /&gt;</h2>
-                <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 gap-6">
-                
-                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#9d4edd]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(157,78,221,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#9d4edd]/10 border border-[#9d4edd]/20 text-[#9d4edd] rounded">Telemetry Engine</span>
-                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-[#9d4edd] transition-colors tech-font">Project_Hyperion</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">A real-time metrics data telemetry interface built to process decentralized stream monitoring variables through static components.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">HTML5</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">TailwindCSS</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">JS_ES6</span>
-                    </div>
-                </div>
-
-                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#00f5ff]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,245,255,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#00f5ff]/10 border border-[#00f5ff]/20 text-[#00f5ff] rounded">Security Node</span>
-                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">Project_Aegis</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">Custom algorithmic array parser engineered to validate incoming payload protocols and secure database connections.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">REST_API</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">JSON_Schema</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">Node_Auth</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certificates" class="py-20">
-            <div class="flex items-center gap-3 mb-12">
-                <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;VERIFIED_CREDENTIALS /&gt;</h2>
-                <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 gap-4">
-                
-                <div class="flex items-center justify-between p-4 border border-gray-900 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-[#39ff14]/5 border border-[#39ff14]/10 flex items-center justify-center text-[#39ff14]">
-                            <i class="fa-solid fa-shield-halved text-sm"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs sm:text-sm font-bold text-white tech-font">AWS Cloud Architect</h4>
-                            <p class="text-[11px] text-gray-500">Amazon Web Services Academy</p>
-                        </div>
-                    </div>
-                    <span class="text-[9px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-2 py-1 rounded tracking-wider">
-                        SECURE
-                    </span>
-                </div>
-
-                <div class="flex items-center justify-between p-4 border border-gray-900 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-[#00f5ff]/5 border border-[#00f5ff]/10 flex items-center justify-center text-[#00f5ff]">
-                            <i class="fa-solid fa-code-branch text-sm"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs sm:text-sm font-bold text-white tech-font">Certified Systems Expert</h4>
-                            <p class="text-[11px] text-gray-500">Global Tech Certification Authority</p>
-                        </div>
-                    </div>
-                    <span class="text-[9px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-2 py-1 rounded tracking-wider">
-                        SECURE
-                    </span>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="text-center py-12 text-[10px] sm:text-xs tech-font text-gray-600 border-t border-gray-950 relative z-10 bg-[#05060b]">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div>&lt;SYSTEM_STATUS: ONLINE // ARCHITECTURE: STATIC_HTML&gt;</div>
-            <div class="text-gray-500 font-sans">
-                &copy; 2026 John Emmanuel Morre. Connected via Vercel Edge Framework.
             </div>
         </div>
-    </footer>
+
+        <!-- Section: Repos / Projects -->
+        <section class="content-section" id="projects">
+            <h2 class="section-title">01. REPOS_AND_SYSTEMS</h2>
+            <div class="portfolio-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <span class="project-icon">&lt;/&gt;</span>
+                            <span class="tag">Production</span>
+                        </div>
+                        <h3>MediTrack System</h3>
+                        <p>An integrated, secure full-stack medical platform engineered for tracking healthcare distributions, analytics tracking, and automated asset metrics management workflows.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Supabase</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <span class="project-icon">&lt;/&gt;</span>
+                            <span class="tag">Active</span>
+                        </div>
+                        <h3>Cross-Platform Core Architecture</h3>
+                        <p>A modular web framework configured for highly fluid multi-device scaling, targeting aggressive pipeline optimizations and seamless interactive elements integration.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS3 Variables</span>
+                        <span class="tag">API Integration</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Certificates -->
+        <section class="content-section" id="certificates">
+            <h2 class="section-title">02. VERIFIED_CREDENTIALS</h2>
+            <div class="portfolio-grid" style="grid-template-columns: 1fr;">
+                
+                <!-- Certificate Module Component -->
+                <div class="cert-card">
+                    <div class="cert-badge-frame">
+                        <!-- Custom digital badge styling based on Cisco Academy credential tracks -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Ethical Hacker Completion Certificate</h4>
+                        <p>Issued by Cisco Networking Academy &bull; Verified Academic Track</p>
+                    </div>
+                    <a href="https://www.netacad.com" target="_blank" class="cert-link">[ VERIFY_CREDENTIAL &rarr; ]</a>
+                </div>
+
+                <!-- Certificate Module Component 2 -->
+                <div class="cert-card">
+                    <div class="cert-badge-frame">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#9b51e0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Ethical Hacker Digital Badge Verification</h4>
+                        <p>Issued via Credly Global Platform Badge Network Matrix</p>
+                    </div>
+                    <a href="https://www.credly.com" target="_blank" class="cert-link">[ VIEW_BADGE &rarr; ]</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
