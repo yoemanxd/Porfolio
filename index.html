@@ -37,11 +37,11 @@
         /* Topbar Redirection Flash Effect Highlight */
         @keyframes targetFlash {
             0% { background-color: rgba(0, 245, 255, 0); border-color: rgba(255, 255, 255, 0.05); }
-            20% { background-color: rgba(0, 245, 255, 0.08); border-color: #00f5ff; }
-            100% { background-color: rgba(0, 245, 255, 0); border-color: rgba(255, 255, 255, 0.05); }
+            20% { background-color: rgba(0, 245, 255, 0.15); border-color: #00f5ff; box-shadow: 0 0 20px rgba(0, 245, 255, 0.1); }
+            100% { background-color: rgba(0, 245, 255, 0); border-color: rgba(255, 255, 255, 0.05); box-shadow: none; }
         }
         .flash-target {
-            animation: targetFlash 1s ease-out;
+            animation: targetFlash 1.2s ease-out;
         }
 
         /* Ensure smooth-scrolling target calculation accounts for fixed navbar alignment offset */
@@ -65,11 +65,11 @@
                 <span class="text-gray-600 group-hover:text-[#00f5ff] transition-colors">/&gt;</span>
             </a>
             <div class="flex space-x-6 sm:space-x-8 tech-font text-xs sm:text-sm">
-                <a href="#about" class="nav-btn text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
-                <a href="#background" class="nav-btn text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
-                <a href="#projects" class="nav-btn text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
-                <a href="#certificates" class="nav-btn text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
-                <a href="#contact" class="nav-btn text-gray-400 hover:text-amber-400 transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-amber-400 hover:after:w-full after:transition-all">// connect</a>
+                <a href="#about" class="nav-link text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
+                <a href="#background" class="nav-link text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
+                <a href="#projects" class="nav-link text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
+                <a href="#certificates" class="nav-link text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
+                <a href="#contact" class="nav-link text-gray-400 hover:text-amber-400 transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-amber-400 hover:after:w-full after:transition-all">// connect</a>
             </div>
         </div>
     </nav>
@@ -140,7 +140,7 @@
         </section>
 
         <section id="about" class="py-20 border-b border-gray-950">
-            <div class="grid md:grid-cols-3 gap-8 items-start">
+            <div id="about-card" class="grid md:grid-cols-3 gap-8 items-start border border-transparent p-4 rounded-xl transition-all duration-300">
                 <div class="md:col-span-2 space-y-6">
                     <div class="flex items-center gap-3">
                         <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;ABOUT_ME /&gt;</h2>
@@ -181,13 +181,13 @@
             </div>
         </section>
 
-        <section id="background" class="py-20 border-b border-b-gray-950">
+        <section id="background" class="py-20 border-b border-gray-950">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
             
-            <div class="space-y-10 relative before:absolute before:inset-0 before:left-4 before:w-[1px] before:bg-gray-900">
+            <div id="logs-card" class="space-y-10 relative before:absolute before:inset-0 before:left-4 before:w-[1px] before:bg-gray-900 border border-transparent p-4 rounded-xl transition-all duration-300">
                 
                 <div class="relative pl-12 group transition-all duration-300">
                     <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#00f5ff] group-hover:border-[#00f5ff] transition-all duration-300 shadow-[0_0_0_0px_rgba(0,245,255,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(0,245,255,0.2)]"></div>
@@ -213,7 +213,7 @@
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
             
-            <div class="grid sm:grid-cols-2 gap-6">
+            <div id="projects-card" class="grid sm:grid-cols-2 gap-6 border border-transparent p-4 rounded-xl transition-all duration-300">
                 
                 <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#9d4edd]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(157,78,221,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
                     <div>
@@ -255,7 +255,7 @@
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
             
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div id="certs-card" class="grid sm:grid-cols-2 gap-4 border border-transparent p-4 rounded-xl transition-all duration-300">
                 
                 <div class="flex items-center justify-between p-4 border border-gray-900 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300">
                     <div class="flex items-center gap-3">
@@ -295,7 +295,7 @@
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
 
-            <div class="grid sm:grid-cols-3 gap-4 tech-font text-xs sm:text-sm">
+            <div id="contact-card" class="grid sm:grid-cols-3 gap-4 tech-font text-xs sm:text-sm border border-transparent p-4 rounded-xl transition-all duration-300">
                 <a href="mailto:morre.johnemmanuel@gmail.com" class="border border-gray-900 bg-[#0b0c14]/40 p-5 rounded-xl hover:border-amber-400/40 hover:bg-[#0b0c14]/80 transition-all duration-300 flex items-center gap-4 group">
                     <div class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-envelope"></i>
@@ -342,26 +342,32 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.nav-btn').forEach(btn => {
+        document.querySelectorAll('.nav-link').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 
                 if(targetId && targetId.startsWith('#')) {
-                    const targetElement = document.querySelector(targetId);
+                    let targetSelector = targetId;
+                    
+                    // Match unique interior elements to perform clean scan flashes
+                    if(targetId === '#about') targetSelector = '#about-card';
+                    if(targetId === '#background') targetSelector = '#logs-card';
+                    if(targetId === '#projects') targetSelector = '#projects-card';
+                    if(targetId === '#certificates') targetSelector = '#certs-card';
+                    if(targetId === '#contact') targetSelector = '#contact-card';
+                    
+                    const targetElement = document.querySelector(targetSelector);
                     
                     if(targetElement) {
-                        // Locate the element or container container box inside the section
-                        const cardElement = targetElement.querySelector('.border') || targetElement;
-                        
-                        // Clear out existing highlight states
-                        document.querySelectorAll('.border, section, div').forEach(node => {
+                        // Clear out old highlight targets cleanly
+                        document.querySelectorAll('.flash-target').forEach(node => {
                             node.classList.remove('flash-target');
                         });
                         
-                        // Execute flash scan alert sequence right as the scroll alignment event settles
+                        // Apply flash alert scanning sequence instantly upon navigation execution
                         setTimeout(() => {
-                            cardElement.classList.add('flash-target');
-                        }, 250);
+                            targetElement.classList.add('flash-target');
+                        }, 100);
                     }
                 }
             });
