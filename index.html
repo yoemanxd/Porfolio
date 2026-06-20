@@ -33,6 +33,21 @@
         .glow-effect {
             animation: cyber-pulse 4s infinite ease-in-out;
         }
+
+        /* Topbar Redirection Flash Effect Highlight */
+        @keyframes targetFlash {
+            0% { background-color: rgba(0, 245, 255, 0); border-color: rgba(255, 255, 255, 0.05); }
+            20% { background-color: rgba(0, 245, 255, 0.08); border-color: #00f5ff; }
+            100% { background-color: rgba(0, 245, 255, 0); border-color: rgba(255, 255, 255, 0.05); }
+        }
+        .flash-target {
+            animation: targetFlash 1s ease-out;
+        }
+
+        /* Ensure smooth-scrolling target calculation accounts for fixed navbar alignment offset */
+        section {
+            scroll-margin-top: 100px;
+        }
     </style>
 </head>
 <body class="text-gray-200 min-h-screen relative overflow-x-hidden selection:bg-[#00f5ff] selection:text-black antialiased">
@@ -50,10 +65,11 @@
                 <span class="text-gray-600 group-hover:text-[#00f5ff] transition-colors">/&gt;</span>
             </a>
             <div class="flex space-x-6 sm:space-x-8 tech-font text-xs sm:text-sm">
-                <a href="#about" class="text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
-                <a href="#background" class="text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
-                <a href="#projects" class="text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
-                <a href="#certificates" class="text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
+                <a href="#about" class="nav-btn text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
+                <a href="#background" class="nav-btn text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
+                <a href="#projects" class="nav-btn text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
+                <a href="#certificates" class="nav-btn text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
+                <a href="#contact" class="nav-btn text-gray-400 hover:text-amber-400 transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-amber-400 hover:after:w-full after:transition-all">// connect</a>
             </div>
         </div>
     </nav>
@@ -61,7 +77,7 @@
     <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 pt-28 pb-16">
 
         <section class="py-8 sm:py-16 flex flex-col justify-center min-h-[80vh]">
-            <div class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
+            <div id="intro-card" class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
                 
                 <div class="flex items-center justify-between border-b border-gray-900 pb-4 mb-6">
                     <div class="flex items-center space-x-2">
@@ -165,7 +181,7 @@
             </div>
         </section>
 
-        <section id="background" class="py-20 border-b border-gray-950">
+        <section id="background" class="py-20 border-b border-b-gray-950">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
@@ -233,7 +249,7 @@
             </div>
         </section>
 
-        <section id="certificates" class="py-20">
+        <section id="certificates" class="py-20 border-b border-gray-950">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;VERIFIED_CREDENTIALS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
@@ -273,6 +289,47 @@
             </div>
         </section>
 
+        <section id="contact" class="py-20">
+            <div class="flex items-center gap-3 mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;CONTACT_NODE /&gt;</h2>
+                <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4 tech-font text-xs sm:text-sm">
+                <a href="mailto:morre.johnemmanuel@gmail.com" class="border border-gray-900 bg-[#0b0c14]/40 p-5 rounded-xl hover:border-amber-400/40 hover:bg-[#0b0c14]/80 transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Secure Email</div>
+                        <div class="text-gray-300 text-[11px] sm:text-xs">morre.johnemmanuel@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/yoemanxd" target="_blank" class="border border-gray-900 bg-[#0b0c14]/40 p-5 rounded-xl hover:border-[#00f5ff]/40 hover:bg-[#0b0c14]/80 transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-8 h-8 rounded-full bg-[#00f5ff]/10 flex items-center justify-center text-[#00f5ff] group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Code Matrix</div>
+                        <div class="text-gray-300">github.com/yoemanxd</div>
+                    </div>
+                </a>
+
+                <div class="border border-gray-900 bg-[#0b0c14]/40 p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-8 h-8 rounded-full bg-[#39ff14]/10 flex items-center justify-center text-[#39ff14]">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Comms Status</div>
+                        <div class="text-[#39ff14] flex items-center gap-1.5 animate-pulse">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#39ff14]"></span> ONLINE // TIBUNGCO
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="text-center py-12 text-[10px] sm:text-xs tech-font text-gray-600 border-t border-gray-950 relative z-10 bg-[#05060b]">
@@ -283,6 +340,33 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                if(targetId && targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        // Locate the element or container container box inside the section
+                        const cardElement = targetElement.querySelector('.border') || targetElement;
+                        
+                        // Clear out existing highlight states
+                        document.querySelectorAll('.border, section, div').forEach(node => {
+                            node.classList.remove('flash-target');
+                        });
+                        
+                        // Execute flash scan alert sequence right as the scroll alignment event settles
+                        setTimeout(() => {
+                            cardElement.classList.add('flash-target');
+                        }, 250);
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
