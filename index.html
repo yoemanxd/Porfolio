@@ -52,12 +52,11 @@
 </head>
 <body class="text-gray-200 min-h-screen relative overflow-x-hidden selection:bg-[#00f5ff] selection:text-black antialiased">
 
-    <canvas id="particle-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
     <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#00f5ff]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect"></div>
     <div class="absolute top-[40%] right-[-10%] w-[45vw] h-[45vw] bg-[#9d4edd]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect" style="animation-delay: 2s;"></div>
-
     <div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
+
+    <canvas id="particle-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-10"></canvas>
 
     <nav class="fixed top-0 left-0 w-full bg-[#05060b]/70 backdrop-blur-xl border-b border-gray-900/80 z-50 px-6 py-4 transition-all duration-300">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -66,8 +65,9 @@
                 <span>SYS.OP</span>
                 <span class="text-gray-600 group-hover:text-[#00f5ff] transition-colors">/&gt;</span>
             </a>
-            <div class="flex space-x-6 sm:space-x-8 tech-font text-xs sm:text-sm">
+            <div class="flex space-x-4 sm:space-x-8 tech-font text-xs sm:text-sm overflow-x-auto whitespace-nowrap py-1">
                 <a href="#about" class="nav-link text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// about</a>
+                <a href="#stack" class="nav-link text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// stack</a>
                 <a href="#background" class="nav-link text-gray-400 hover:text-[#9d4edd] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#9d4edd] hover:after:w-full after:transition-all">// logs</a>
                 <a href="#projects" class="nav-link text-gray-400 hover:text-[#00f5ff] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00f5ff] hover:after:w-full after:transition-all">// repos</a>
                 <a href="#certificates" class="nav-link text-gray-400 hover:text-[#39ff14] transition-all relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#39ff14] hover:after:w-full after:transition-all">// certs</a>
@@ -76,7 +76,7 @@
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 pt-28 pb-16">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-20 pt-28 pb-16">
 
         <section class="py-8 sm:py-16 flex flex-col justify-center min-h-[80vh]">
             <div id="intro-card" class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
@@ -141,7 +141,7 @@
             </div>
         </section>
 
-        <section id="about" class="py-20 border-b border-gray-950">
+        <section id="about" class="py-20 border-b border-gray-900/40">
             <div id="about-card" class="grid md:grid-cols-3 gap-8 items-start border border-transparent p-4 rounded-xl transition-all duration-300">
                 <div class="md:col-span-2 space-y-6">
                     <div class="flex items-center gap-3">
@@ -183,7 +183,49 @@
             </div>
         </section>
 
-        <section id="background" class="py-20 border-b border-gray-950">
+        <section id="stack" class="py-20 border-b border-gray-900/40">
+            <div class="flex items-center gap-3 mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-[#39ff14] tech-font tracking-wide">&lt;TECH_STACK /&gt;</h2>
+                <div class="h-[1px] bg-gradient-to-r from-[#39ff14]/30 to-transparent flex-grow mt-1"></div>
+            </div>
+
+            <div id="stack-card" class="grid sm:grid-cols-3 gap-6">
+                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#00f5ff]/20 transition-all duration-300">
+                    <div class="text-xs font-bold text-[#00f5ff] tech-font tracking-widest mb-4 uppercase">// 01. Client_Side</div>
+                    <h3 class="text-lg font-bold text-white font-sans mb-3">UI & Interactive Engineering</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-gray-400 rounded">HTML5 / CSS3</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-[#00f5ff] rounded">Tailwind CSS</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-gray-300 rounded">JavaScript (ES6+)</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-purple-400 rounded">Responsive Engineering</span>
+                    </div>
+                </div>
+
+                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#9d4edd]/20 transition-all duration-300">
+                    <div class="text-xs font-bold text-[#9d4edd] tech-font tracking-widest mb-4 uppercase">// 02. Server_Side</div>
+                    <h3 class="text-lg font-bold text-white font-sans mb-3">Database & Functional Logic</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-[#9d4edd] rounded">Supabase Backend</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-white rounded">Relational SQL</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-gray-400 rounded">RESTful API Design</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-amber-400 rounded">JSON Parsing</span>
+                    </div>
+                </div>
+
+                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#39ff14]/20 transition-all duration-300">
+                    <div class="text-xs font-bold text-[#39ff14] tech-font tracking-widest mb-4 uppercase">// 03. Architecture</div>
+                    <h3 class="text-lg font-bold text-white font-sans mb-3">System Design & Operations</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-[#39ff14] rounded">Git / Versioning</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-gray-400 rounded">Relational Schemas</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-cyan-400 rounded">Predictive Logic</span>
+                        <span class="px-2.5 py-1 text-[11px] tech-font bg-gray-950 border border-gray-800 text-gray-500 rounded">Edge Frameworks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="background" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
@@ -209,7 +251,7 @@
             </div>
         </section>
 
-        <section id="projects" class="py-20 border-b border-gray-950">
+        <section id="projects" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;PROJECT_REPOS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
@@ -217,6 +259,24 @@
             
             <div id="projects-card" class="grid sm:grid-cols-2 gap-6 border border-transparent p-4 rounded-xl transition-all duration-300">
                 
+                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#00f5ff]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,245,255,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#00f5ff]/10 border border-[#00f5ff]/20 text-[#00f5ff] rounded">Health Management Node</span>
+                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">MediTrack_System</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                            An integrated digital health management and inventory control system customized for the Davao del Norte State College Health Services Unit. Features hardware-level RFID validation matrices alongside predictive medicine supply depletion trackers.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Supabase Backend</span>
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">Relational SQL</span>
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">RFID Integration</span>
+                    </div>
+                </div>
+
                 <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#9d4edd]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(157,78,221,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
@@ -224,34 +284,20 @@
                             <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
                         </div>
                         <h3 class="text-lg font-bold text-white group-hover:text-[#9d4edd] transition-colors tech-font">Project_Hyperion</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">A real-time metrics data telemetry interface built to process decentralized stream monitoring variables through static components.</p>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                            A real-time metric visualization telemetry platform built to handle complex JSON payloads and variable arrays, mapping dynamic streaming statistics into optimized static web layers.
+                        </p>
                     </div>
                     <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">HTML5</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">TailwindCSS</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">JS_ES6</span>
-                    </div>
-                </div>
-
-                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#00f5ff]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,245,255,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#00f5ff]/10 border border-[#00f5ff]/20 text-[#00f5ff] rounded">Security Node</span>
-                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">Project_Aegis</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">Custom algorithmic array parser engineered to validate incoming payload protocols and secure database connections.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">REST_API</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">JSON_Schema</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">Node_Auth</span>
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">HTML5 Boilerplate</span>
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Tailwind CSS</span>
+                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">JS_ES6 Logic</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="certificates" class="py-20 border-b border-gray-950">
+        <section id="certificates" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;VERIFIED_CREDENTIALS /&gt;</h2>
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
@@ -334,7 +380,7 @@
 
     </main>
 
-    <footer class="text-center py-12 text-[10px] sm:text-xs tech-font text-gray-600 border-t border-gray-950 relative z-10 bg-[#05060b]">
+    <footer class="text-center py-12 text-[10px] sm:text-xs tech-font text-gray-600 border-t border-gray-950 relative z-20 bg-[#05060b]">
         <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>&lt;SYSTEM_STATUS: ONLINE // ARCHITECTURE: STATIC_HTML&gt;</div>
             <div class="text-gray-500 font-sans">
@@ -344,18 +390,18 @@
     </footer>
 
     <script>
-        // --- Interactive Background Script ---
+        // --- High-Visibility Interactive Canvas Script ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
 
         let particlesArray = [];
-        const numberOfParticles = 65; 
-        const linkDistance = 140; // Increased spacing for layout links
+        const numberOfParticles = 45; 
+        const linkDistance = 180;     
 
         const mouse = {
             x: null,
             y: null,
-            radius: 280 // Bigger tracking radius for powerful magnet response
+            radius: 320 
         };
 
         window.addEventListener('mousemove', (event) => {
@@ -379,10 +425,10 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2.5 + 3; // Bigger particles (3px to 5.5px)
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.speedY = (Math.random() - 0.5) * 0.4;
-                this.color = Math.random() > 0.5 ? 'rgba(0, 245, 255, 0.55)' : 'rgba(157, 78, 221, 0.45)';
+                this.size = Math.random() * 4 + 5; 
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.color = Math.random() > 0.5 ? 'rgba(0, 245, 255, 0.75)' : 'rgba(157, 78, 221, 0.65)';
             }
             update() {
                 this.x += this.speedX;
@@ -398,6 +444,12 @@
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                
+                ctx.strokeStyle = this.color.replace('0.75', '0.2').replace('0.65', '0.2');
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size + 3, 0, Math.PI * 2);
+                ctx.stroke();
             }
         }
 
@@ -414,15 +466,14 @@
                 particlesArray[i].update();
                 particlesArray[i].draw();
 
-                // Mouse interactive draw line segment
                 if (mouse.x !== null && mouse.y !== null) {
                     let dxMouse = particlesArray[i].x - mouse.x;
                     let dyMouse = particlesArray[i].y - mouse.y;
                     let distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
                     
                     if (distanceMouse < mouse.radius) {
-                        ctx.strokeStyle = `rgba(0, 245, 255, ${0.25 * (1 - distanceMouse / mouse.radius)})`;
-                        ctx.lineWidth = 1.2; // Thicker lines tracking to user cursor
+                        ctx.strokeStyle = `rgba(0, 245, 255, ${0.45 * (1 - distanceMouse / mouse.radius)})`;
+                        ctx.lineWidth = 2.5; 
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
@@ -430,15 +481,14 @@
                     }
                 }
 
-                // Internal node arrays intersection setup
                 for (let j = i + 1; j < particlesArray.length; j++) {
                     let dx = particlesArray[i].x - particlesArray[j].x;
                     let dy = particlesArray[i].y - particlesArray[j].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
                     if (distance < linkDistance) {
-                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.15 * (1 - distance / linkDistance)})`;
-                        ctx.lineWidth = 0.8; // Structured link wires thickness
+                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.3 * (1 - distance / linkDistance)})`;
+                        ctx.lineWidth = 1.5; 
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -464,6 +514,7 @@
                     let targetSelector = targetId;
                     
                     if(targetId === '#about') targetSelector = '#about-card';
+                    if(targetId === '#stack') targetSelector = '#stack-card';
                     if(targetId === '#background') targetSelector = '#logs-card';
                     if(targetId === '#projects') targetSelector = '#projects-card';
                     if(targetId === '#certificates') targetSelector = '#certs-card';
