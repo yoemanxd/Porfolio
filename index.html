@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAINFRAME // Developer Portfolio</title>
+    <!-- Stable Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,8 +57,10 @@
     <div class="absolute top-[40%] right-[-10%] w-[45vw] h-[45vw] bg-[#9d4edd]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect" style="animation-delay: 2s;"></div>
     <div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
 
+    <!-- Background Interactive Matrix Elements Layer -->
     <canvas id="particle-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-10"></canvas>
 
+    <!-- Navigation Header Layer -->
     <nav class="fixed top-0 left-0 w-full bg-[#05060b]/70 backdrop-blur-xl border-b border-gray-900/80 z-50 px-6 py-4 transition-all duration-300">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#" class="tech-font font-bold text-[#00f5ff] tracking-widest text-sm sm:text-base group flex items-center gap-2">
@@ -76,8 +79,10 @@
         </div>
     </nav>
 
+    <!-- Main Content Layer -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-20 pt-28 pb-16">
 
+        <!-- Banner Intro Section -->
         <section class="py-8 sm:py-16 flex flex-col justify-center min-h-[80vh]">
             <div id="intro-card" class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
                 
@@ -141,6 +146,7 @@
             </div>
         </section>
 
+        <!-- About Node Section -->
         <section id="about" class="py-20 border-b border-gray-900/40">
             <div id="about-card" class="grid md:grid-cols-3 gap-8 items-start border border-transparent p-4 rounded-xl transition-all duration-300">
                 <div class="md:col-span-2 space-y-6">
@@ -183,6 +189,7 @@
             </div>
         </section>
 
+        <!-- Technical Capabilities Stacks -->
         <section id="stack" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#39ff14] tech-font tracking-wide">&lt;TECH_STACK /&gt;</h2>
@@ -225,6 +232,7 @@
             </div>
         </section>
 
+        <!-- Timeline Log Section -->
         <section id="background" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
@@ -233,24 +241,36 @@
             
             <div id="logs-card" class="space-y-10 relative before:absolute before:inset-0 before:left-4 before:w-[1px] before:bg-gray-900 border border-transparent p-4 rounded-xl transition-all duration-300">
                 
+                <!-- Entry 1: Virtual Assistant -->
                 <div class="relative pl-12 group transition-all duration-300">
                     <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#00f5ff] group-hover:border-[#00f5ff] transition-all duration-300 shadow-[0_0_0_0px_rgba(0,245,255,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(0,245,255,0.2)]"></div>
-                    <span class="text-xs text-[#00f5ff] tech-font font-bold uppercase tracking-wider bg-[#00f5ff]/5 px-2 py-0.5 rounded border border-[#00f5ff]/10">2024 - Present</span>
-                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#00f5ff]">Lead Systems Architect</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Tech Solutions Corp // Building scalable digital frameworks.</p>
-                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Engineered full-stack responsive pipelines, optimizing custom relational data models while improving overall application structural runtimes.</p>
+                    <span class="text-xs text-[#00f5ff] tech-font font-bold uppercase tracking-wider bg-[#00f5ff]/5 px-2 py-0.5 rounded border border-[#00f5ff]/10">January 2026 - June 2026</span>
+                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#00f5ff]">Virtual Assistant</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Freelance // Digital Operations & Administration</p>
+                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Managed client communication loops, optimized administrative tracking assets, sorted structured scheduling indices, and handled digital workflow modules.</p>
                 </div>
 
+                <!-- Entry 2: Call Center Agent -->
                 <div class="relative pl-12 group transition-all duration-300">
                     <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#9d4edd] group-hover:border-[#9d4edd] transition-all duration-300 shadow-[0_0_0_0px_rgba(157,78,221,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(157,78,221,0.2)]"></div>
-                    <span class="text-xs text-[#9d4edd] tech-font font-bold uppercase tracking-wider bg-[#9d4edd]/5 px-2 py-0.5 rounded border border-[#9d4edd]/10">2022 - 2024</span>
-                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#9d4edd]">Junior Frontend Designer</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Digital Labs Inc // Pixel-perfect interactive interfaces.</p>
-                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Collaborated on custom modern themes, writing structural script layers and handling complex layout updates for interactive platform products.</p>
+                    <span class="text-xs text-[#9d4edd] tech-font font-bold uppercase tracking-wider bg-[#9d4edd]/5 px-2 py-0.5 rounded border border-[#9d4edd]/10">January 2024 - May 2024</span>
+                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#9d4edd]">Call Center Agent</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">VXI Global // Davao City</p>
+                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Facilitated complex client communication endpoints, resolved real-time account inquiries, and cross-examined customer profile queries securely.</p>
+                </div>
+
+                <!-- Entry 3: Refiller/Bagger -->
+                <div class="relative pl-12 group transition-all duration-300">
+                    <div class="absolute left-[11px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 group-hover:bg-[#00f5ff] group-hover:border-[#00f5ff] transition-all duration-300 shadow-[0_0_0_0px_rgba(0,245,255,0.2)] group-hover:shadow-[0_0_10px_4px_rgba(0,245,255,0.2)]"></div>
+                    <span class="text-xs text-[#00f5ff] tech-font font-bold uppercase tracking-wider bg-[#00f5ff]/5 px-2 py-0.5 rounded border border-[#00f5ff]/10">February 2023 - August 2024</span>
+                    <h3 class="text-base sm:text-xl font-bold text-white mt-2 transition-colors group-hover:text-[#00f5ff]">Refiller/Bagger</h3>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium mt-1">Gaisano Grand Tibungco // Tibungco Davao City</p>
+                    <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mt-2 font-light">Supervised inventory allocation on the floor, managed stock tracking systems, and maintained structured customer service delivery cycles.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Project Repos Section -->
         <section id="projects" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;PROJECT_REPOS /&gt;</h2>
@@ -259,6 +279,7 @@
             
             <div id="projects-card" class="space-y-12 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
+                <!-- Repo 1: MediTrack System -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#00f5ff]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,245,255,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#00f5ff]/30 transition-all duration-300 shadow-inner">
                         <img src="CORE_INTERFACE.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="MediTrack Clinic Management System Interface" class="w-full h-full object-cover">
@@ -276,10 +297,10 @@
                             </div>
                             <h3 class="text-xl font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">MediTrack_System</h3>
                             <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                                An enterprise-grade, integrated health management and pharmaceutical inventory tracker customized specifically for the <span class="text-white">Health Services Unit of Davao del Norte State College</span>. 
+                                An integrated digital health management and medicine tracking framework designed for the Davao del Norte State College Health Services Unit. Replaces conventional diagnostic logs with real-time operational logic profiles.
                             </p>
                             <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                                Built to eliminate processing delays, the platform implements localized logic routines mapping database updates to live student tracking files. It optimizes resource allocation pipelines through structured automation, ensuring medicine stock depletion lines sync seamlessly based on campus clinical demand logs.
+                                Built to eliminate processing delays, the platform implements predictive medicine usage patterns, automatic stock validation updates, and complete digital history mapping interfaces across multiple hardware node targets.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
@@ -290,6 +311,7 @@
                     </div>
                 </div>
 
+                <!-- Repo 2: HelpLine Platform -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#9d4edd]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(157,78,221,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#9d4edd]/30 transition-all duration-300 shadow-inner">
                         <img src="HELPLINE.JPG" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="HelpLine VAWC Protection Platform Interface" class="w-full h-full object-cover">
@@ -321,6 +343,7 @@
                     </div>
                 </div>
 
+                <!-- Repo 3: Davao Metro Shuttle System -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#39ff14]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(57,255,20,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#39ff14]/30 transition-all duration-300 shadow-inner">
                         <img src="DMS.JPG" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Davao Metro Shuttle Dashboard Portal" class="w-full h-full object-cover">
@@ -355,6 +378,7 @@
             </div>
         </section>
 
+        <!-- Credentials Section -->
         <section id="certificates" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;VERIFIED_CREDENTIALS /&gt;</h2>
@@ -363,12 +387,13 @@
             
             <div id="certs-card" class="space-y-12 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
+                <!-- Expanded Certificate Entry 1: deployment.jpg -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#39ff14]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(57,255,20,0.02)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#39ff14]/30 transition-all duration-300 shadow-inner">
-                        <img src="deployment.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="MediTrack Capstone Deployment Certificate" class="w-full h-full object-cover">
+                        <img src="deployment.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="MediTrack Capstone Project Deployment Certificate" class="w-full h-full object-cover">
                         <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gray-950/90 text-center p-4">
                             <i class="fa-solid fa-shield-halved text-3xl text-[#39ff14]/40 mb-2 animate-pulse"></i>
-                            <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ CAPSTONE_DEPLOYMENT_CERT.PNG ]</div>
+                            <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ CAPSTONE_DEPLOYMENT_CERT.JPG ]</div>
                         </div>
                         <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">CREDENTIAL_FILE // 01</div>
                     </div>
@@ -381,17 +406,18 @@
                             <h3 class="text-xl font-bold text-white group-hover:text-[#39ff14] transition-colors tech-font">Capstone Project Implementation Certificate</h3>
                             <p class="text-xs text-gray-500 tech-font mt-1">Project Status: Deployed // Health Services Unit Integration Token</p>
                             <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                                Officially certifies the successful presentation, deployment, and operational execution of <span class="text-white">"MediTrack: A Smart Clinic Management System with Predictive Analysis"</span>. Verified by the Institute of Computing and authorized under the endorsement of the HSU Head Nurse.
+                                Officially certifies the successful presentation, deployment, and operational execution of the custom web capstone architecture: <span class="text-white">"MEDITRACK: A Smart Clinic Management with Predictive Analysis"</span>. Verified under endorsement from the HSU Head Nurse.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
                             <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">Full System Launch</span>
                             <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Predictive Analytics</span>
-                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">DNSC Institutional Integration</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">Institutional Integration</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Expanded Certificate Entry 2: cisco.jpg -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#00f5ff]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,245,255,0.02)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#00f5ff]/30 transition-all duration-300 shadow-inner">
                         <img src="cisco.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Cisco Networking Academy Ethical Hacker Certificate" class="w-full h-full object-cover">
@@ -410,7 +436,7 @@
                             <h3 class="text-xl font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">Cisco Certified Ethical Hacker</h3>
                             <p class="text-xs text-gray-500 tech-font mt-1">Curriculum Node: Network Security & Defensive Analysis Framework</p>
                             <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                                Validates end-to-end expertise in offensive and defensive digital protocols. Covers penetration testing vectors, secure cryptographic session handshakes, database injection mitigation arrays, and vulnerability threat assessments conducted through DNSC.
+                                Attests to completion of foundational system security protocols under the Cisco Networking Academy program. Validates defensive mapping logic, vulnerability mitigation assessments, and network threat auditing techniques.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
@@ -424,6 +450,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;CONTACT_NODE /&gt;</h2>
@@ -476,8 +503,8 @@
         </div>
     </footer>
 
+    <!-- Scripts Logic -->
     <script>
-        // --- High-Visibility Interactive Canvas Script ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
 
