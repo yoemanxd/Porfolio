@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAINFRAME // Developer Portfolio</title>
-    <!-- Stable Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +52,6 @@
 </head>
 <body class="text-gray-200 min-h-screen relative overflow-x-hidden selection:bg-[#00f5ff] selection:text-black antialiased">
 
-    <!-- Interactive Canvas Layer -->
     <canvas id="particle-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
     <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[#00f5ff]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect"></div>
@@ -345,7 +343,6 @@
         </div>
     </footer>
 
-    <!-- Scripts Logic -->
     <script>
         // --- Interactive Background Script ---
         const canvas = document.getElementById('particle-canvas');
@@ -353,12 +350,12 @@
 
         let particlesArray = [];
         const numberOfParticles = 65; 
-        const linkDistance = 110; 
+        const linkDistance = 140; // Increased spacing for layout links
 
         const mouse = {
             x: null,
             y: null,
-            radius: 180 
+            radius: 280 // Bigger tracking radius for powerful magnet response
         };
 
         window.addEventListener('mousemove', (event) => {
@@ -382,10 +379,10 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 1;
-                this.speedX = (Math.random() - 0.5) * 0.35;
-                this.speedY = (Math.random() - 0.5) * 0.35;
-                this.color = Math.random() > 0.5 ? 'rgba(0, 245, 255, 0.4)' : 'rgba(157, 78, 221, 0.3)';
+                this.size = Math.random() * 2.5 + 3; // Bigger particles (3px to 5.5px)
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.color = Math.random() > 0.5 ? 'rgba(0, 245, 255, 0.55)' : 'rgba(157, 78, 221, 0.45)';
             }
             update() {
                 this.x += this.speedX;
@@ -417,14 +414,15 @@
                 particlesArray[i].update();
                 particlesArray[i].draw();
 
+                // Mouse interactive draw line segment
                 if (mouse.x !== null && mouse.y !== null) {
                     let dxMouse = particlesArray[i].x - mouse.x;
                     let dyMouse = particlesArray[i].y - mouse.y;
                     let distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
                     
                     if (distanceMouse < mouse.radius) {
-                        ctx.strokeStyle = `rgba(0, 245, 255, ${0.15 * (1 - distanceMouse / mouse.radius)})`;
-                        ctx.lineWidth = 0.8;
+                        ctx.strokeStyle = `rgba(0, 245, 255, ${0.25 * (1 - distanceMouse / mouse.radius)})`;
+                        ctx.lineWidth = 1.2; // Thicker lines tracking to user cursor
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
@@ -432,14 +430,15 @@
                     }
                 }
 
+                // Internal node arrays intersection setup
                 for (let j = i + 1; j < particlesArray.length; j++) {
                     let dx = particlesArray[i].x - particlesArray[j].x;
                     let dy = particlesArray[i].y - particlesArray[j].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
                     if (distance < linkDistance) {
-                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.08 * (1 - distance / linkDistance)})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.15 * (1 - distance / linkDistance)})`;
+                        ctx.lineWidth = 0.8; // Structured link wires thickness
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
