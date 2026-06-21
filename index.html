@@ -257,43 +257,72 @@
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
             
-            <div id="projects-card" class="grid sm:grid-cols-2 gap-6 border border-transparent p-4 rounded-xl transition-all duration-300">
+            <div id="projects-card" class="space-y-12 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
-                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#00f5ff]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,245,255,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#00f5ff]/10 border border-[#00f5ff]/20 text-[#00f5ff] rounded">Health Management Node</span>
-                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#00f5ff]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,245,255,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
+                    <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#00f5ff]/30 transition-all duration-300 shadow-inner">
+                        <img src="meditrack-mockup.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="MediTrack System Dashboard Interface" class="w-full h-full object-cover">
+                        <div class="hidden absolute inset-0 flex-col items-center justify-center bg-gray-950/90 text-center p-4">
+                            <i class="fa-solid fa-laptop-medical text-3xl text-[#00f5ff]/40 mb-2 animate-pulse"></i>
+                            <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ MEDITRACK // CORE_INTERFACE.PNG ]</div>
                         </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">MediTrack_System</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                            An integrated digital health management and inventory control system customized for the Davao del Norte State College Health Services Unit. Features hardware-level RFID validation matrices alongside predictive medicine supply depletion trackers.
-                        </p>
+                        <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">NODE_PREVIEW // 01</div>
                     </div>
-                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Supabase Backend</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">Relational SQL</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">RFID Integration</span>
+                    <div class="md:col-span-7 flex flex-col justify-between h-full space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#00f5ff]/10 border border-[#00f5ff]/20 text-[#00f5ff] rounded">Full-Stack Digital Health Node</span>
+                                <a href="https://github.com/yoemanxd" target="_blank" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#00f5ff] transition-colors tech-font">MediTrack_System</h3>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                An enterprise-grade, integrated health management and pharmaceutical inventory tracker developed tailored specifically for the <span class="text-white">Health Services Unit of Davao del Norte State College</span>. 
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                Built to eliminate processing delays, the platform implements localized logic routines mapping database updates to live student tracking files. It optimizes resource allocation pipelines through structured automation, ensuring medicine stock depletion lines sync seamlessly based on campus clinical demand logs.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Supabase Engine</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-purple-400 rounded">Relational SQL</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">RFID Logic Arrays</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">Data Schemas</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="border border-gray-900 bg-[#0b0c14]/40 p-6 rounded-xl hover:border-[#9d4edd]/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(157,78,221,0.05)] hover:-translate-y-1 group relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#9d4edd]/10 border border-[#9d4edd]/20 text-[#9d4edd] rounded">Telemetry Engine</span>
-                            <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#9d4edd]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(157,78,221,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
+                    <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#9d4edd]/30 transition-all duration-300 shadow-inner">
+                        <img src="hyperion-mockup.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Project Hyperion Real-Time Telemetry Monitor" class="w-full h-full object-cover">
+                        <div class="hidden absolute inset-0 flex-col items-center justify-center bg-gray-950/90 text-center p-4">
+                            <i class="fa-solid fa-chart-network text-3xl text-[#9d4edd]/40 mb-2 animate-pulse"></i>
+                            <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ HYPERION // DATA_STREAM.PNG ]</div>
                         </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-[#9d4edd] transition-colors tech-font">Project_Hyperion</h3>
-                        <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                            A real-time metric visualization telemetry platform built to handle complex JSON payloads and variable arrays, mapping dynamic streaming statistics into optimized static web layers.
-                        </p>
+                        <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">NODE_PREVIEW // 02</div>
                     </div>
-                    <div class="flex flex-wrap gap-2 text-[10px] tech-font mt-6 pt-4 border-t border-gray-900">
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">HTML5 Boilerplate</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Tailwind CSS</span>
-                        <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">JS_ES6 Logic</span>
+                    <div class="md:col-span-7 flex flex-col justify-between h-full space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#9d4edd]/10 border border-[#9d4edd]/20 text-[#9d4edd] rounded">Real-Time Data Streams</span>
+                                <a href="https://github.com/yoemanxd" target="_blank" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#9d4edd] transition-colors tech-font">Project_Hyperion</h3>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                A high-performance telemetry dashboard framework optimized to process decentralized streaming system diagnostic components. 
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                Engineered to evaluate custom incoming client authorization nodes and array variables instantly. It transforms complex nested JSON configurations into high-speed static visualization parameters without compounding runtime thread overhead.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">HTML5 Structure</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">Tailwind CSS</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">JSON Schema Validation</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-500 rounded">ES6 Stream Layers</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -303,37 +332,46 @@
                 <div class="h-[1px] bg-gradient-to-r from-[#00f5ff]/30 to-transparent flex-grow mt-1"></div>
             </div>
             
-            <div id="certs-card" class="grid sm:grid-cols-2 gap-4 border border-transparent p-4 rounded-xl transition-all duration-300">
+            <div id="certs-card" class="space-y-6 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
-                <div class="flex items-center justify-between p-4 border border-gray-900 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-[#39ff14]/5 border border-[#39ff14]/10 flex items-center justify-center text-[#39ff14]">
-                            <i class="fa-solid fa-shield-halved text-sm"></i>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 border border-gray-900/80 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300 gap-6">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                        <div class="w-16 h-16 rounded-xl bg-[#39ff14]/5 border border-[#39ff14]/20 flex flex-col items-center justify-center text-[#39ff14] shadow-inner relative overflow-hidden group shrink-0">
+                            <img src="aws-cert.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-contain p-2">
+                            <i class="hidden fa-solid fa-shield-halved text-2xl"></i>
                         </div>
-                        <div>
-                            <h4 class="text-xs sm:text-sm font-bold text-white tech-font">AWS Cloud Architect</h4>
-                            <p class="text-[11px] text-gray-500">Amazon Web Services Academy</p>
+                        <div class="space-y-1">
+                            <h4 class="text-base font-bold text-white tech-font">AWS Cloud Architect Certification</h4>
+                            <p class="text-xs text-[#39ff14]/80 tech-font font-medium">Issued by Amazon Web Services Academy // Authorization Node Token</p>
+                            <p class="text-xs sm:text-sm text-gray-400 font-light max-w-xl">
+                                Validates specialized competence in architectural system designs, configuring secure distributed instances, database synchronization parameters, and cloud computing payload models.
+                            </p>
                         </div>
                     </div>
-                    <span class="text-[9px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-2 py-1 rounded tracking-wider">
-                        SECURE
+                    <span class="text-[10px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-3 py-1.5 rounded tracking-widest uppercase self-start sm:self-center">
+                        // SECURE_NODE
                     </span>
                 </div>
 
-                <div class="flex items-center justify-between p-4 border border-gray-900 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-[#00f5ff]/5 border border-[#00f5ff]/10 flex items-center justify-center text-[#00f5ff]">
-                            <i class="fa-solid fa-code-branch text-sm"></i>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 border border-gray-900/80 bg-[#0b0c14]/40 rounded-xl hover:border-gray-800 hover:bg-[#0b0c14]/70 transition-all duration-300 gap-6">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                        <div class="w-16 h-16 rounded-xl bg-[#00f5ff]/5 border border-[#00f5ff]/20 flex flex-col items-center justify-center text-[#00f5ff] shadow-inner relative overflow-hidden group shrink-0">
+                            <img src="systems-cert.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-contain p-2">
+                            <i class="hidden fa-solid fa-code-branch text-2xl"></i>
                         </div>
-                        <div>
-                            <h4 class="text-xs sm:text-sm font-bold text-white tech-font">Certified Systems Expert</h4>
-                            <p class="text-[11px] text-gray-500">Global Tech Certification Authority</p>
+                        <div class="space-y-1">
+                            <h4 class="text-base font-bold text-white tech-font">Certified Systems Expert (CSE)</h4>
+                            <p class="text-xs text-[#00f5ff]/80 tech-font font-medium">Issued by Global Tech Certification Authority // Protocol Node Token</p>
+                            <p class="text-xs sm:text-sm text-gray-400 font-light max-w-xl">
+                                Attests to backend architectural expertise, validating core performance monitoring competencies, relational schema modeling, and dynamic system routing logic.
+                            </p>
                         </div>
                     </div>
-                    <span class="text-[9px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-2 py-1 rounded tracking-wider">
-                        SECURE
+                    <span class="text-[10px] font-bold tech-font text-[#39ff14] bg-[#39ff14]/5 border border-[#39ff14]/20 px-3 py-1.5 rounded tracking-widest uppercase self-start sm:self-center">
+                        // SECURE_NODE
                     </span>
                 </div>
+
             </div>
         </section>
 
