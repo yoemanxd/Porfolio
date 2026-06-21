@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAINFRAME // Developer Portfolio</title>
+    <!-- Stable Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,8 +57,10 @@
     <div class="absolute top-[40%] right-[-10%] w-[45vw] h-[45vw] bg-[#9d4edd]/5 rounded-full blur-[120px] pointer-events-none z-0 glow-effect" style="animation-delay: 2s;"></div>
     <div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
 
+    <!-- Background Interactive Matrix Elements Layer -->
     <canvas id="particle-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-10"></canvas>
 
+    <!-- Navigation Header Layer -->
     <nav class="fixed top-0 left-0 w-full bg-[#05060b]/70 backdrop-blur-xl border-b border-gray-900/80 z-50 px-6 py-4 transition-all duration-300">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#" class="tech-font font-bold text-[#00f5ff] tracking-widest text-sm sm:text-base group flex items-center gap-2">
@@ -76,8 +79,10 @@
         </div>
     </nav>
 
+    <!-- Main Content Layer -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 relative z-20 pt-28 pb-16">
 
+        <!-- Banner Intro Section -->
         <section class="py-8 sm:py-16 flex flex-col justify-center min-h-[80vh]">
             <div id="intro-card" class="border border-gray-800/80 hover:border-[#00f5ff]/30 rounded-xl bg-[#0b0c14]/90 backdrop-blur-md p-5 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,245,255,0.08)] max-w-4xl w-full mx-auto transition-all duration-500 group">
                 
@@ -141,6 +146,7 @@
             </div>
         </section>
 
+        <!-- About Node Section -->
         <section id="about" class="py-20 border-b border-gray-900/40">
             <div id="about-card" class="grid md:grid-cols-3 gap-8 items-start border border-transparent p-4 rounded-xl transition-all duration-300">
                 <div class="md:col-span-2 space-y-6">
@@ -183,6 +189,7 @@
             </div>
         </section>
 
+        <!-- Technical Capabilities Stacks -->
         <section id="stack" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#39ff14] tech-font tracking-wide">&lt;TECH_STACK /&gt;</h2>
@@ -225,6 +232,7 @@
             </div>
         </section>
 
+        <!-- Timeline Log Section -->
         <section id="background" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;TIMELINE_LOGS /&gt;</h2>
@@ -251,6 +259,7 @@
             </div>
         </section>
 
+        <!-- Project Repos Section (Expanded with Split Images and Deep Descriptions) -->
         <section id="projects" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;PROJECT_REPOS /&gt;</h2>
@@ -259,15 +268,19 @@
             
             <div id="projects-card" class="space-y-12 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
+                <!-- Expanded Repo 1: MediTrack System -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#00f5ff]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,245,255,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
+                    <!-- Project Media Preview Card Column -->
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#00f5ff]/30 transition-all duration-300 shadow-inner">
                         <img src="meditrack-dashboard.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="MediTrack System Interface Mockup" class="w-full h-full object-cover">
+                        <!-- High Tech Vector Placeholder Framework -->
                         <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gray-950/90 text-center p-4">
                             <i class="fa-solid fa-laptop-medical text-3xl text-[#00f5ff]/40 mb-2 animate-pulse"></i>
                             <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ MEDITRACK // CORE_INTERFACE.PNG ]</div>
                         </div>
                         <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">NODE_PREVIEW // 01</div>
                     </div>
+                    <!-- Detailed Operational Text Matrix Column -->
                     <div class="md:col-span-7 flex flex-col justify-between h-full space-y-4">
                         <div>
                             <div class="flex justify-between items-center mb-2">
@@ -291,15 +304,19 @@
                     </div>
                 </div>
 
+                <!-- Expanded Repo 2: Project Hyperion -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#9d4edd]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(157,78,221,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
+                    <!-- Project Media Preview Card Column -->
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#9d4edd]/30 transition-all duration-300 shadow-inner">
                         <img src="hyperion-dashboard.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Project Hyperion Telemetry Monitor Mockup" class="w-full h-full object-cover">
+                        <!-- High Tech Vector Placeholder Framework -->
                         <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gray-950/90 text-center p-4">
                             <i class="fa-solid fa-chart-network text-3xl text-[#9d4edd]/40 mb-2 animate-pulse"></i>
                             <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ HYPERION // DATA_STREAM.PNG ]</div>
                         </div>
                         <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">NODE_PREVIEW // 02</div>
                     </div>
+                    <!-- Detailed Operational Text Matrix Column -->
                     <div class="md:col-span-7 flex flex-col justify-between h-full space-y-4">
                         <div>
                             <div class="flex justify-between items-center mb-2">
@@ -323,9 +340,46 @@
                     </div>
                 </div>
 
+                <!-- Expanded Repo 3: EduCore Matrix (New Project Addition) -->
+                <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#39ff14]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(57,255,20,0.03)] grid md:grid-cols-12 gap-6 items-center group relative">
+                    <!-- Project Media Preview Card Column -->
+                    <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#39ff14]/30 transition-all duration-300 shadow-inner">
+                        <img src="educore-dashboard.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="EduCore Matrix Platform Interface" class="w-full h-full object-cover">
+                        <!-- High Tech Vector Placeholder Framework -->
+                        <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gray-950/90 text-center p-4">
+                            <i class="fa-solid fa-graduation-cap text-3xl text-[#39ff14]/40 mb-2 animate-pulse"></i>
+                            <div class="text-[10px] tech-font text-gray-500 uppercase tracking-widest">[ EDUCORE // CENTRAL_HUB.PNG ]</div>
+                        </div>
+                        <div class="absolute top-2 left-2 text-[9px] tech-font bg-black/70 px-2 py-0.5 rounded border border-gray-900 text-gray-400">NODE_PREVIEW // 03</div>
+                    </div>
+                    <!-- Detailed Operational Text Matrix Column -->
+                    <div class="md:col-span-7 flex flex-col justify-between h-full space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] tech-font uppercase tracking-widest px-2 py-0.5 bg-[#39ff14]/10 border border-[#39ff14]/20 text-[#39ff14] rounded">Educational Platform Architecture</span>
+                                <a href="https://github.com/yoemanxd" target="_blank" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#39ff14] transition-colors tech-font">EduCore_Matrix</h3>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                A student-centered content management node and query architecture engineered to streamline tracking data, progress mapping layouts, and academic resource distribution modules.
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
+                                Implements dynamic, secure database procedures matching structured text indices and operational schemas. The system utilizes automated sorting algorithms to build responsive, performance-tuned learning boards and student tracking dashboards that run instantly on low-overhead endpoints.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#00f5ff] rounded">PostgreSQL Core</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-gray-400 rounded">Full-Stack HTML5</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-[#39ff14] rounded">Query Optimization</span>
+                            <span class="bg-gray-950 border border-gray-900 px-2 py-0.5 text-purple-400 rounded">UI Custom Filters</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
+        <!-- Credentials Section -->
         <section id="certificates" class="py-20 border-b border-gray-900/40">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;VERIFIED_CREDENTIALS /&gt;</h2>
@@ -334,6 +388,7 @@
             
             <div id="certs-card" class="space-y-12 border border-transparent p-2 rounded-xl transition-all duration-300">
                 
+                <!-- Expanded Certificate Entry 1 -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#39ff14]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(57,255,20,0.02)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#39ff14]/30 transition-all duration-300 shadow-inner">
                         <img src="aws-certification-preview.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="AWS Cloud Architect Verified Certificate File" class="w-full h-full object-cover">
@@ -352,7 +407,7 @@
                             <h3 class="text-xl font-bold text-white group-hover:text-[#39ff14] transition-colors tech-font">AWS Cloud Architect Certification</h3>
                             <p class="text-xs text-gray-500 tech-font mt-1">Node Token ID: GT-AWS-9831X // Secure Encryption Protocol Layer</p>
                             <p class="text-xs sm:text-sm text-gray-400 mt-2 font-light leading-relaxed">
-                                Validates specialized full-stack competence in cloud platform engineering. Attests to proficiency in architecting decoupled scalable microservices, secure VPC parameter boundaries, dynamic database clustering pipelines, and programmatic system resource allocation models.
+                                Validates specialized competence in cloud platform engineering. Attests to proficiency in architecting decoupled scalable microservices, secure VPC parameter boundaries, dynamic database clustering pipelines, and programmatic system resource allocation models.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 text-[10px] tech-font pt-4 border-t border-gray-900">
@@ -363,6 +418,7 @@
                     </div>
                 </div>
 
+                <!-- Expanded Certificate Entry 2 -->
                 <div class="border border-gray-900/60 bg-[#0b0c14]/70 p-6 rounded-xl hover:border-[#00f5ff]/30 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,245,255,0.02)] grid md:grid-cols-12 gap-6 items-center group relative">
                     <div class="md:col-span-5 relative w-full aspect-[16/10] bg-gray-950 rounded-lg overflow-hidden border border-gray-800/80 group-hover:border-[#00f5ff]/30 transition-all duration-300 shadow-inner">
                         <img src="systems-expert-preview.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Certified Systems Expert File" class="w-full h-full object-cover">
@@ -395,6 +451,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="flex items-center gap-3 mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-[#00f5ff] tech-font tracking-wide">&lt;CONTACT_NODE /&gt;</h2>
@@ -447,6 +504,7 @@
         </div>
     </footer>
 
+    <!-- Scripts Logic -->
     <script>
         // --- High-Visibility Interactive Canvas Script ---
         const canvas = document.getElementById('particle-canvas');
